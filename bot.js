@@ -1,4 +1,6 @@
 require('dotenv').config();
+var http = require('http');
+var request = require('request');
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -17,7 +19,7 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`Logged in as ${client.user.tag}! ${new Date().toString()}`);
 });
 
 const yasuoArray = ['ヤスオ','やすお','Yasuo','yasuo'];
@@ -37,3 +39,11 @@ client.on('message', msg => {
 });
 
 client.login(token);
+
+setInterval(function(){
+  request.get({
+    url: "https://discode-yasuo-bot.herokuapp.com/"
+  }, function (error, response, body) {
+    console.log('access');
+  });
+}, 29 * 60 * 1000);
