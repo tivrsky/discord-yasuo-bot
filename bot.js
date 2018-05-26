@@ -19,7 +19,12 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}! ${new Date().toString()}`);
+  console.log(`Logged in as ${client.user.tag}!`);
+  request.get({
+    url: "https://discode-yasuo-bot.herokuapp.com/"
+  }, function (error, response, body) {
+    console.log(`Start ${new Date().toLocaleString()}`);
+  });
 });
 
 const yasuoArray = ['ヤスオ','やすお','Yasuo','yasuo'];
@@ -44,6 +49,6 @@ setInterval(function(){
   request.get({
     url: "https://discode-yasuo-bot.herokuapp.com/"
   }, function (error, response, body) {
-    console.log('access');
+    console.log(`Access ${new Date().toLocaleString()}`);
   });
 }, 29 * 60 * 1000);
