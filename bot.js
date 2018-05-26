@@ -27,7 +27,7 @@ client.on('ready', () => {
   });
 });
 
-const yasuoArray = ['ヤスオ','やすお','Yasuo','yasuo','YASUO'];
+const yasuoArray = ['ヤスオ','やすお','Yasuo','yasuo','YASUO','ﾔｽｵ'];
 
 client.on('message', msg => {
 
