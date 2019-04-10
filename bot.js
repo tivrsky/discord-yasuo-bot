@@ -24,12 +24,23 @@ client.on('ready', () => {
     url: "https://discode-yasuo-bot.herokuapp.com/"
   }, function (error, response, body) {
     console.log(`Start ${new Date().toLocaleString()}`);
-  });
+    });
 });
 
-const yasuoArray = ['ヤスオ','やすお','Yasuo','yasuo','YASUO','ﾔｽｵ'];
-
+const yasuoArray = ['ヤスオ', 'やすお', 'Yasuo', 'yasuo', 'YASUO', 'ﾔｽｵ'];
+const hungrySummoners = ['!HS', '!hs'];
+const hsWelcome = ['!welcome', '!Welcome'];
 client.on('message', msg => {
+  hsWelcome.forEach((welcome) => {
+    if (msg.content == welcome) {
+      msg.reply(process.env.HUNGRY_SUMMONERS_WELCOME);
+    }
+  });
+  hungrySummoners.forEach((hs) => {
+    if (msg.content == hs) {
+      msg.reply(process.env.HUNGRY_SUMMONERS_INFO);
+    }
+  });
 
   yasuoArray.forEach(function(yasuo){
     if(~msg.content.indexOf(yasuo)){
@@ -51,4 +62,5 @@ setInterval(function(){
   }, function (error, response, body) {
     console.log(`Access ${new Date().toLocaleString()}`);
   });
-}, 29 * 60 * 1000);
+}, 10 * 60 * 1000);
+
