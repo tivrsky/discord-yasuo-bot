@@ -12,7 +12,7 @@
   "dependencies": {
     "dependencies": "0.0.1",
     "discord.js": "^11.4.2",
-    "dotenv": "^6.2.0",
+    "dotenv": "^7.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "heroku": "^7.22.1",
