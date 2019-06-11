@@ -1,21 +1,21 @@
 require('dotenv').config();
-var http = require('http');
-var request = require('request');
 
+let http = require('http');
+let request = require('request');
+const path = require('path')
+const express = require('express')
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const token = process.env.YASUO_TOKEN;
 
-const express = require('express')
-const path = require('path')
+const token = process.env.YASUO_TOKEN;
 const PORT = process.env.PORT || 5000
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
+  .get('/', (req, res) => res.send('yasuo-bot'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 client.on('ready', () => {
@@ -30,6 +30,7 @@ client.on('ready', () => {
 const yasuoArray = ['ヤスオ', 'やすお', 'Yasuo', 'yasuo', 'YASUO', 'ﾔｽｵ'];
 const hungrySummoners = ['!HS', '!hs'];
 const hsWelcome = ['!welcome', '!Welcome'];
+
 client.on('message', msg => {
   hsWelcome.forEach((welcome) => {
     if (msg.content == welcome) {
