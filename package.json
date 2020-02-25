@@ -12,17 +12,17 @@
   "dependencies": {
     "dependencies": "0.0.1",
     "discord.js": "^11.5.1",
-    "dotenv": "^8.0.0",
-    "ejs": "^2.6.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.4",
     "express": "^4.17.1",
-    "heroku": "^7.26.2",
-    "request": "^2.88.0"
+    "heroku": "^7.38.2",
+    "request": "^2.88.2"
   },
   "engines": {
     "node": "8.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
+    "url": "https://github.com/tivrsky/discode-yasuo-bot"
   },
   "license": "MIT",
   "keywords": [
