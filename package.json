@@ -19,7 +19,8 @@
     "request": "^2.88.2"
   },
   "engines": {
-    "node": "8.x"
+    "node": "12.14.1",
+    "npm": "6.13.4"
   },
   "repository": {
     "url": "https://github.com/tivrsky/discode-yasuo-bot"
