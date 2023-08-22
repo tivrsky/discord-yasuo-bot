@@ -29,6 +29,6 @@
     "express"
   ],
   "devDependencies": {
-    "tough-cookie": "~2.5.0"
+    "tough-cookie": "~4.1.3"
   }
 }
