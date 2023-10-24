@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 let http = require('http');
-let request = require('request');
+let request = require('@cypress/request');
 const path = require('path')
 const express = require('express')
 const Discord = require('discord.js');
