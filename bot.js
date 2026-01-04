@@ -1,7 +1,5 @@
 require('dotenv').config();
 
-let http = require('http');
-let request = require('@cypress/request');
 const path = require('path')
 const express = require('express')
 const Discord = require('discord.js');
@@ -20,11 +18,9 @@ express()
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  request.get({
-    url: "https://discode-yasuo-bot.herokuapp.com/"
-  }, function (error, response, body) {
-    console.log(`Start ${new Date().toLocaleString()}`);
-    });
+  fetch("https://discode-yasuo-bot.herokuapp.com/")
+    .then(() => console.log(`Start ${new Date().toLocaleString()}`))
+    .catch(() => {});
 });
 
 const yasuoArray = ['ヤスオ', 'やすお', 'Yasuo', 'yasuo', 'YASUO', 'ﾔｽｵ'];
@@ -57,11 +53,9 @@ client.on('message', msg => {
 
 client.login(token);
 
-setInterval(function(){
-  request.get({
-    url: "https://discode-yasuo-bot.herokuapp.com/"
-  }, function (error, response, body) {
-    console.log(`Access ${new Date().toLocaleString()}`);
-  });
+setInterval(() => {
+  fetch("https://discode-yasuo-bot.herokuapp.com/")
+    .then(() => console.log(`Access ${new Date().toLocaleString()}`))
+    .catch(() => {});
 }, 10 * 60 * 1000);
 
